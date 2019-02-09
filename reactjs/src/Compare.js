@@ -21,7 +21,7 @@ class Compare extends Component {
       <>
         <h1>
           {splits.map((letter, i) =>
-            <span 
+            <span
               key={`letter-${i}`}
               className={redIndex === i ? 'red' : undefined}
             >

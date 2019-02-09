@@ -4,10 +4,8 @@
       <span
         v-for="(letter, i) in splits"
         :key="`letter-${i}`"
-        :class="{'red' : i === redIndex}"
-      >
-        {{ letter }}
-      </span>
+        :class="{'red' : i % redIndex === 0}"
+      >{{ letter }}</span>
     </h1>
     <input v-model="dataDothesplits" class="input input--copy">
   </div>
@@ -21,16 +19,8 @@ export default {
   },
   data: function () {
     return {
-      redIndex: 2,
+      redIndex: 4,
       dataDothesplits: this.dothesplits
-    }
-  },
-  methods: {
-    setIndex(property){
-      return {
-        'fa-checkbox-marked': this.content[property],
-        'fa-checkbox-blank-outline': !this.content[property]
-      }
     }
   },
   computed: {
@@ -39,6 +29,8 @@ export default {
     },
   }
 }
+
+
 </script>
 
 <style lang='sass' scoped>
@@ -48,7 +40,7 @@ h1
   span
     @for $i from 1 through 30
       &:nth-child(#{$i})
-        animation: rise-1 #{(random(4) + 2) + s} infinite linear
+        animation: fade #{(random(4) + 2) + s} infinite linear
         animation-delay: #{random(5) + s}
 
 .red
@@ -72,7 +64,7 @@ h1
   top: 0
   border-radius: 0 0 1rem 1rem
 
-@keyframes rise-1
+@keyframes fade
   0%
     opacity: 1
   50%

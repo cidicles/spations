@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Compare dothesplits="VueistheBest"/>
+    <Compare dothesplits="Vue is the Best"/>
   </div>
 </template>
 

@@ -5,7 +5,7 @@ import './App.sass';
 class App extends Component {
   render() {
     return (
-      <Compare dothesplits='ReactIsTheBest' />
+      <Compare dothesplits='React is the Best' />
     );
   }
 }
